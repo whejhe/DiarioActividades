@@ -7,6 +7,7 @@ import {
     TextInput,
     ActivityIndicator,
     Pressable,
+    ImageBackground,
 } from "react-native";
 import { FIREBASE_AUTH } from "../services/FirebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -32,7 +33,7 @@ const Login = () => {
     };
 
     return (
-        <View style={styles.container}>
+        <ImageBackground source={require('../../assets/background.jpg')} style={styles.container}>
             <TextInput
                 value={email}
                 style={styles.input}
@@ -64,7 +65,7 @@ const Login = () => {
                     </Pressable>
                 </>
             )}
-        </View>
+        </ImageBackground>
     );
 };
 

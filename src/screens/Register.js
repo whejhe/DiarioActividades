@@ -1,6 +1,6 @@
 // src/screens/Register.js
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TextInput, Button, Pressable } from 'react-native';
+import { View, Text, StyleSheet, TextInput, Button, Pressable, ImageBackground } from 'react-native';
 import { FIREBASE_AUTH, FIRESTORE_DB } from '../services/FirebaseConfig';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { collection, addDoc } from 'firebase/firestore';
@@ -41,7 +41,7 @@ const Register = () => {
     };
 
     return (
-        <View style={styles.container}>
+        <ImageBackground source={require('../../assets/background.jpg')} style={styles.container}>
             <Text style={styles.title}>Registrar usuario</Text>
             <TextInput
                 style={styles.input}
@@ -72,7 +72,7 @@ const Register = () => {
             <Pressable style={styles.button} onPress={handleRegister}>
                 <Text style={styles.text}>Registrar</Text>
             </Pressable>
-        </View>
+        </ImageBackground>
     );
 };
 
