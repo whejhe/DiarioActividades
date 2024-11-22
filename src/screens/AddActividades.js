@@ -21,10 +21,11 @@ const AddActividades = () => {
 
     const handleAddActividad = async () => {
         try {
+            const fechaActual = new Date().toISOString().split('T')[0];
             const actividadesCollection = collection(FIRESTORE_DB, 'actividades');
             await addDoc(actividadesCollection, {
                 descripcion: descripcion || 'Sin descripción',
-                fecha: fecha || 'Sin fecha',
+                fecha: fechaActual,
                 imagenes: imagenes || [],
                 titulo: titulo || 'Sin título',
                 userId
@@ -52,12 +53,6 @@ const AddActividades = () => {
                 placeholder="Descripción"
                 value={descripcion}
                 onChangeText={(text) => setDescripcion(text)}
-            />
-            <TextInput
-                style={styles.input}
-                placeholder="Fecha"
-                value={fecha}
-                onChangeText={(text) => setFecha(text)}
             />
             <TextInput
                 style={styles.input}

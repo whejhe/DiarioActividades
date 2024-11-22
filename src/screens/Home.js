@@ -1,6 +1,6 @@
 // src/screens/Home.js
 import React from 'react';
-import { View, Text, StyleSheet, Button, Pressable } from 'react-native';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { FIREBASE_AUTH } from '../services/FirebaseConfig';
 import { useNavigation } from '@react-navigation/native';
 
@@ -23,7 +23,7 @@ const Home = () => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Bienvenido a la pantalla de inicio</Text>
+            <Text style={styles.title}>Bienvenido a nuestra App</Text>
             <Pressable style={styles.button} onPress={handleGoToActividades}>
                 <Text style={styles.text}>Ir a Actividades</Text>
             </Pressable>

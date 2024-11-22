@@ -39,9 +39,11 @@ const Actividades = () => {
             <FlatList
                 data={actividades}
                 renderItem={({ item }) => (
-                    <View style={styles.actividad}>
+                    <Pressable style={styles.actividad}
+                        onPress={() => navigation.navigate('DetalleActividades', { actividad: item })}
+                    >
                         <Text style={styles.tituloActividad}>{item.titulo}</Text>
-                    </View>
+                    </Pressable>
                 )}
                 keyExtractor={(item) => item.titulo}            
             />
@@ -59,7 +61,11 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 24,
         fontWeight: 'bold',
+        width: '100%',
+        textAlign: 'center',
         marginBottom: 20,
+        borderBottomColor: 'black',
+        borderBottomWidth: 1,
     },
     button: {
         marginTop: 30,
@@ -80,9 +86,11 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 5,
         textAlign: 'center',
+        padding: 0
     },
     actividad: {
-        backgroundColor: 'red',
+        borderBottomColor: 'black',
+        borderBottomWidth: 1,
         width: '100%',
     }
 });

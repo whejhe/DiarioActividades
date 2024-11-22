@@ -10,6 +10,7 @@ import Register from "./src/screens/Register";
 import { onAuthStateChanged, User } from "firebase/auth";
 import Actividades from "./src/screens/Actividades";
 import AddActividades from "./src/screens/AddActividades";
+import DetalleActividades from './src/components/DetalleActividades';
 
 const Stack = createNativeStackNavigator();
 
@@ -42,6 +43,7 @@ export default function App() {
         <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="Actividades" component={Actividades} />
         <Stack.Screen name="AddActividades" component={AddActividades} />
+        <Stack.Screen name="DetalleActividades" component={DetalleActividades} />
       </Stack.Navigator>
     </NavigationContainer>
   );
