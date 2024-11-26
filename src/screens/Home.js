@@ -1,6 +1,6 @@
 // src/screens/Home.js
 import React from 'react';
-import { View, Text, StyleSheet, Pressable } from 'react-native';
+import { View, Text, StyleSheet, Pressable, ImageBackground } from 'react-native';
 import { FIREBASE_AUTH } from '../services/FirebaseConfig';
 import { useNavigation } from '@react-navigation/native';
 
@@ -22,7 +22,7 @@ const Home = () => {
     };
 
     return (
-        <View style={styles.container}>
+        <ImageBackground source={require('../../assets/background_home.jpg')} style={styles.container}>
             <Text style={styles.title}>Bienvenido a nuestra App</Text>
             <Pressable style={styles.button} onPress={handleGoToActividades}>
                 <Text style={styles.text}>Ir a Actividades</Text>
@@ -30,7 +30,7 @@ const Home = () => {
             <Pressable style={styles.button} onPress={handleLogout}>
                 <Text style={styles.text}>Cerrar sesión</Text>
             </Pressable>
-        </View>
+        </ImageBackground>
     );
 };
 
@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
         fontSize: 24,
         fontWeight: 'bold',
         marginBottom: 20,
+        color: '#fff'
     },
     button: {
         padding: 10,
